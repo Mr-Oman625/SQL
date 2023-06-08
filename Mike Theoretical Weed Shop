@@ -1,0 +1,51 @@
+# SQL
+
+-- Create a store database
+
+/** Store ala Mike:
+Blue Dream (1, 15, 9)
+Sour Diesel (2, 20, 12)
+Banana Pudding (3, 18, 7)
+Green Crack (4, 20, 14)
+Lemon Meringue (5, 12, 5)
+Do-Si-Do (6, 10, 3)
+Runtz (7, 20, 15)
+Strawberry Pie (8, 17, 13)
+Cat Piss (9, 16, 10)
+H20 (10, 14, 11)
+This is Stupid (11, 5, 8)
+Why (12, 2, 6)
+Why x2 (13, 1, 4)
+Why x3 (14, 1, 2)
+Why x4( 15, 0.5, 1)
+**/
+
+-- Sort database by position of product on shelf
+
+CREATE TABLE Store_ala_Mike (Position INTEGER, name TEXT, price INTEGER, quality INTEGER);
+INSERT INTO Store_ala_Mike VALUES (1, "Blue Dream", 15, 9) ;
+INSERT INTO Store_ala_Mike VALUES (2, "Sour Diesel", 20, 12) ;
+INSERT INTO Store_ala_Mike VALUES (3, "Banana Pudding", 18, 7) ;
+INSERT INTO Store_ala_Mike VALUES (4, "Green Crack", 20, 14) ;
+INSERT INTO Store_ala_Mike VALUES (5, "Lemon Meringue", 12, 5) ;
+INSERT INTO Store_ala_Mike VALUES (6, "Do-Si-Do", 10, 3) ;
+INSERT INTO Store_ala_Mike VALUES (7, "Runtz", 20, 15) ;
+INSERT INTO Store_ala_Mike VALUES (8, "Starwberry Pie", 17, 13) ;
+INSERT INTO Store_ala_Mike VALUES (9, "Cat Piss", 16, 10) ;
+INSERT INTO Store_ala_Mike VALUES (10, "H20", 14, 11) ;
+INSERT INTO Store_ala_Mike VALUES (11, "This is Stupid", 5, 8) ;
+INSERT INTO Store_ala_Mike VALUES (12, "Why", 2, 6) ;
+INSERT INTO Store_ala_Mike VALUES (13, "Why x2", 1, 4) ;
+INSERT INTO Store_ala_Mike VALUES (14, "Why x3", 1, 2) ;
+INSERT INTO Store_ala_Mike VALUES (15, "Why x4", 0.5, 1)  ;
+
+-- Sort database by quality of product
+
+SELECT * FROM Store_ala_Mike;
+SELECT * FROM Store_ala_Mike WHERE price < 15 GROUP BY quality;
+
+-- Determine Avg product price based on previous quality sorting
+
+SELECT AVG(price) "avg item price"
+FROM Store_ala_Mike;
+
